@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Age Prediction</title>
+    <link rel="stylesheet" href="static/css/stylehome.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">AgePredict</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+            <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="#">Register</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1>About Us</h1>
+        <p>We are a team of AI enthusiasts dedicated to bringing you the best in age prediction technology. Our mission is to create a fun and engaging experience for users who are curious about their perceived age through the lens of AI.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

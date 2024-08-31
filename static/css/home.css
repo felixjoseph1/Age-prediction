@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 150px;
+    text-align: center;
+}
+
+/* Header styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Fullscreen Background Image with Dark Overlay */
+body {
+    background: url('/static/images/homepage_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Content Container */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 150px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    color: white; /* Make text white for visibility */
+}
+
+h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Link Styles */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+}

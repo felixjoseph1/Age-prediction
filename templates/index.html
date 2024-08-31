@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Prediction - Home</title>
+    <link rel="stylesheet" href="static/css/stylehome.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">AgePredict</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+            <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="#">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Discover Your Age Prediction</h1>
+        <p>Upload your photo and voice to see how old you look and sound.</p>
+        <a href="{{ url_for('try_it') }}" class="cta-button">Try It Now</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <img src="static/images/face-icon.jpg" alt="Face Detection">
+            <h3>Upload Your Photo</h3>
+            <p>Our AI analyzes your facial features.</p>
+        </div>
+        <div class="feature">
+            <img src="static/images/3369523.jpg" alt="Voice Analysis">
+            <h3>Record Your Voice</h3>
+            <p>Your voice tells more about your age.</p>
+        </div>
+        <div class="feature">
+            <img src="static/images/image.png" alt="AI Processing">
+            <h3>Get Your Prediction</h3>
+            <p>See your predicted age instantly.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+            <!-- <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="assets/images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/images/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/images/instagram-icon.png" alt="Instagram"></a>
+            </div> -->
+        </div>
+    </footer>
+</body>
+</html>

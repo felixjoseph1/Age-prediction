@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tryit.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">AgePredict</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+            <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <section class="prediction-form">
+                <h2>Upload Image and Record Voice</h2>
+                <form id="prediction-form" method="POST" enctype="multipart/form-data" action="{{ url_for('predict') }}">
+                    <div class="form-group">
+                        <label for="image">Upload Your Photo:</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="audio">Record Your Voice:</label>
+                        <input type="file" id="audio" name="audio" accept="audio/*">
+                    </div>
+                    <button type="submit">Predict My Age</button>
+                </form>
+            </section>
+            <section class="prediction-results">
+                <h2>Prediction Results</h2>
+                <div id="spinner" class="spinner" style="display:none;"></div> <!-- Spinner -->
+                <div id="age-result" class="result-box">
+                    
+                    {% if age is not none %}
+                        <p>Your predicted age is: <strong>{{ age }} years old</strong></p>
+                    {% else %}
+                        <p>Please upload an image to predict your age.</p>
+                    {% endif %}
+                    {% if image_url %}
+                        <div class="uploaded-image" >
+                            <img src="{{ image_url }}" alt="Uploaded Image" class="passport-image" />
+                        </div>
+                    {% endif %}
+                </div>
+            </section>
+            
+
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+            <!-- <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram"></a>
+            </div> -->
+        </div>
+    </footer>
+    <script>
+        document.getElementById('prediction-form').onsubmit = function() {
+            document.getElementById('spinner').style.display = 'block'; // Show spinner
+        };
+    </script>
+</body>
+</html>

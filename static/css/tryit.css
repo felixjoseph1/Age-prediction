@@ -1,0 +1,239 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+nav {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+.auth-buttons a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+/* Main styles */
+main {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.prediction-form {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input[type=file] {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.feature img{
+
+    width: 200px;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Prediction results */
+.prediction-results {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.result-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.result-box p {
+    font-size: 24px;
+    margin: 0;
+}
+footer {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.newsletter input[type="email"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+}
+/* Add your existing styles here */
+
+/* Spinner styles */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; /* Center horizontally */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Optional: Centering the spinner */
+#spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it's above other content */
+}
+.uploaded-image img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.passport-image {
+    width: 180px;  /* Width for passport size (approx. 2 inches) */
+    height: 180px; /* Height for passport size (approx. 2 inches) */
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+    border-radius: 5px; /* Optional: add slightly rounded corners */
+    display: block;
+    margin: 20px auto; /* Center the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+    border: 1px solid #ccc; /* Optional: add a border to mimic a passport photo */
+}
+
+
+
+.social-media a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input[type=file] {
+        padding: 12px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+
+    .result-box {
+        padding: 20px;
+    }
+
+    .result-box p {
+        font-size: 20px;
+    }
+}

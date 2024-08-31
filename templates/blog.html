@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Age Prediction</title>
+    <link rel="stylesheet" href="static/css/stylehome.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">AgePredict</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+            <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="#">Register</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1>Blog</h1>
+        <article>
+            <h2>How AI is Transforming Age Prediction</h2>
+            <p>Artificial Intelligence has opened new avenues for accurately predicting age through face and voice analysis...</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h2>The Science Behind Voice Analysis</h2>
+            <p>Voice analysis is an intricate science. Learn how age affects vocal cords and how our AI deciphers it...</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h2>Future of Age Prediction Technology</h2>
+            <p>Explore the future possibilities of AI-driven age prediction and its potential impact on various industries...</p>
+            <a href="#">Read More</a>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Age Prediction</title>
+    <link rel="stylesheet" href="static/css/stylehome.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">AgePredict</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+            <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="#">Register</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1>How It Works</h1>
+        <p>Our age prediction tool uses advanced AI techniques to analyze your face and voice. Here’s how:</p>
+        <ol>
+            <li><strong>Face Analysis:</strong> We use state-of-the-art deep learning models to analyze your facial features and estimate your age.</li>
+            <li><strong>Voice Analysis:</strong> Our AI listens to your voice to detect subtle age indicators.</li>
+            <li><strong>Instant Results:</strong> Get your predicted age within seconds after uploading your photo and voice recording.</li>
+        </ol>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
+                <li><a href="{{ url_for('try_it') }}">Try It</a></li>
+                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

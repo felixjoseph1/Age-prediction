@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # Ensure templates auto-reload
 
 # Load your pre-trained model
-model = load_model('C:/Users/felix/Downloads/age_prediction_model_resnet2.keras')  # Replace with your model path
+model = load_model("model/age_prediction_model_resnet2.keras")  # Replace with your model path
 
 def predict_age(image_path):
     # Load and preprocess the image

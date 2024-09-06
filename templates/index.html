@@ -8,18 +8,77 @@
 </head>
 <body>
     <!-- Navbar -->
+     <style>
+        /* Style the navigation bar */
+        nav {
+            background-color:  #4a90e2FF;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-buttons a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color:  #4a90e2FF;
+            border-radius: 5px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color:  #4a90e2FF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+     </style>
     <nav>
         <div class="logo">AgePredict</div>
         <ul class="nav-links">
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             <li><a href="{{ url_for('try_it') }}">Try It</a></li>
-            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <!-- <li><a href="{{ url_for('blog') }}">Blog</a></li> -->
             <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="{{ url_for('logout') }}">Logout</a>
-            <a href="#">Register</a>
+            <!-- <a href="#">Register</a> -->
         </div>
     </nav>
 
@@ -54,10 +113,10 @@
         <div class="footer-content">
             <ul class="footer-links">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
                 <li><a href="{{ url_for('try_it') }}">Try It</a></li>
-                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <!-- <li><a href="{{ url_for('blog') }}">Blog</a></li> -->
                 <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             </ul>
             <!-- <div class="newsletter">
                 <h3>Subscribe to Our Newsletter</h3>

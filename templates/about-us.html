@@ -5,6 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Age Prediction</title>
     <link rel="stylesheet" href="static/css/stylehome.css">
+
+    <style>
+        /* Style the navigation bar */
+        nav {
+            background-color:  #4a90e2FF;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-buttons a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color:  #4a90e2FF;
+            border-radius: 5px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color:  #4a90e2FF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+     </style>
+    <style>
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Styling for the content */
+        .content {
+            line-height: 1.6;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        /* Team member section */
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .team-member p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -12,34 +128,63 @@
         <div class="logo">AgePredict</div>
         <ul class="nav-links">
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             <li><a href="{{ url_for('try_it') }}">Try It</a></li>
-            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <!-- <li><a href="{{ url_for('blog') }}">Blog</a></li> -->
             <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="{{ url_for('logout') }}">Logout</a>
-            <a href="#">Register</a>
+            <!-- <a href="#">Register</a> -->
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="content">
-        <h1>About Us</h1>
-        <p>We are a team of AI enthusiasts dedicated to bringing you the best in age prediction technology. Our mission is to create a fun and engaging experience for users who are curious about their perceived age through the lens of AI.</p>
-    </main>
+    <div class="container">
+        <main class="content">
+            <h1>About Us</h1>
+            <p>Welcome to AgePredict! We are a team of passionate AI enthusiasts who believe in the power of technology to make everyday experiences more exciting. Our goal is to harness the capabilities of advanced machine learning algorithms to create tools that are not only functional but also fun to use.</p>
+            <p>AgePredict was born out of our fascination with how AI can interpret and understand human characteristics. We’ve combined cutting-edge image and audio processing techniques with deep learning models to develop an application that can estimate a person’s age based on their facial features and voice. While age prediction is a challenging task, we’re proud of the accuracy and performance of our system, which continues to improve as we gather more data and refine our models.</p>
+            <p>But AgePredict is more than just a technological experiment; it’s a way to bring people together, spark curiosity, and start conversations. Whether you’re trying to guess your own age, surprising a friend, or simply exploring the possibilities of AI, our platform is here to provide a delightful experience.</p>
+            <p>We believe in transparency, continuous learning, and user-centric design. Our team is committed to making AI accessible to everyone and ensuring that our tools are easy to use, reliable, and respectful of your privacy.</p>
+
+            <!-- <h2>Meet the Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="static/images/team_member_1.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Co-Founder & Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/team_member_2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Co-Founder & AI Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/team_member_3.jpg" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="static/images/team_member_4.jpg" alt="Team Member 4">
+                    <h3>Michael Lee</h3>
+                    <p>Data Scientist</p>
+                </div>
+            </div> -->
+        </main>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <!--  <footer>
         <div class="footer-content">
             <ul class="footer-links">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
                 <li><a href="{{ url_for('try_it') }}">Try It</a></li>
                 <li><a href="{{ url_for('blog') }}">Blog</a></li>
                 <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             </ul>
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>

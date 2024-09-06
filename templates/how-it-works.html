@@ -5,6 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works - Age Prediction</title>
     <link rel="stylesheet" href="static/css/stylehome.css">
+    <style>
+        /* Add the container style */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Ensure the content is aligned and readable */
+        .content {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Adjust the margins for the main content */
+        .content ol {
+            margin-left: 20px;
+        }
+
+        /* Style the list items */
+        .content li {
+            margin-bottom: 10px;
+        }
+
+        /* Style the navigation bar */
+        nav {
+            background-color:  #4a90e2;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-buttons a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            background-color:  #4a90e2;
+            border-radius: 5px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color:  #4a90e2;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -12,37 +94,90 @@
         <div class="logo">AgePredict</div>
         <ul class="nav-links">
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             <li><a href="{{ url_for('try_it') }}">Try It</a></li>
-            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            <!-- <li><a href="{{ url_for('blog') }}">Blog</a></li> -->
             <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="{{ url_for('logout') }}">Logout</a>
-            <a href="#">Register</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="content">
-        <h1>How It Works</h1>
-        <p>Our age prediction tool uses advanced AI techniques to analyze your face and voice. Here’s how:</p>
-        <ol>
-            <li><strong>Face Analysis:</strong> We use state-of-the-art deep learning models to analyze your facial features and estimate your age.</li>
-            <li><strong>Voice Analysis:</strong> Our AI listens to your voice to detect subtle age indicators.</li>
-            <li><strong>Instant Results:</strong> Get your predicted age within seconds after uploading your photo and voice recording.</li>
-        </ol>
-    </main>
+    <!-- Main Content inside the container -->
+    <div class="container">
+        <main class="content">
+            <h1>How It Works: Technical Overview</h1>
+            <ol>
+                <li><strong>Introduction:</strong> The Age Prediction system is a sophisticated application that leverages deep learning techniques to estimate a person's age based on their facial image and voice recording. By employing state-of-the-art neural network architectures such as ResNet (Residual Networks) and models trained on large-scale datasets like ImageNet, this system achieves high accuracy in age prediction. Below is a detailed explanation of the system's workflow and the technology behind it.</li>
+
+                <li><strong>Data Input and Preprocessing:</strong>
+                    <ul>
+                        <li><strong>Image Input:</strong> Users upload a facial image, which serves as the primary input for the age prediction model. The system accepts standard image formats such as JPEG and PNG.</li>
+                        <li><strong>Image Preprocessing:</strong>
+                            <ul>
+                                <li>Resizing and Normalization: The uploaded image is resized to a fixed dimension (e.g., 224x224 pixels) to match the input size expected by the ResNet model. The pixel values are normalized to the range [0, 1] or standardized based on the dataset's mean and standard deviation.</li>
+                                <li>Face Detection: Before feeding the image into the model, a face detection algorithm (such as MTCNN or Haar cascades) is applied to ensure that only the face region is processed. This helps the model focus on relevant features.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Voice Input:</strong> Users can also upload a voice recording in formats like WAV or MP3, which is processed to extract relevant audio features.</li>
+                        <li><strong>Audio Preprocessing:</strong>
+                            <ul>
+                                <li>Feature Extraction: The audio file is transformed into a Mel-frequency cepstral coefficient (MFCC) representation, which captures the essential features of the voice that correlate with age, such as pitch and tone.</li>
+                                <li>Spectrogram Analysis: The voice data can also be represented as a spectrogram, a visual representation of the audio frequencies over time, which is then analyzed by the model.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Feature Extraction with ResNet and ImageNet:</strong>
+                    <ul>
+                        <li><strong>ResNet Architecture:</strong> The core of the image-based age prediction model is built on the ResNet architecture, specifically ResNet-50. ResNet is a powerful convolutional neural network (CNN) that introduces skip connections, allowing the network to learn residual functions. This innovation enables the training of very deep networks without suffering from the vanishing gradient problem.</li>
+                        <li><strong>Layers in ResNet:</strong>
+                            <ul>
+                                <li>Convolutional Layers: These layers extract features by applying filters across the image. Early layers capture low-level features like edges and textures, while deeper layers capture high-level features like facial structures and patterns associated with age.</li>
+                                <li>Residual Blocks: ResNet’s residual blocks allow the model to learn identity mappings, which help in preserving information across layers and enable the training of deeper networks.</li>
+                                <li>Global Average Pooling and Fully Connected Layers: After the convolutional layers, the feature maps are reduced using global average pooling, followed by fully connected layers that output the predicted age.</li>
+                            </ul>
+                        </li>
+                        <li><strong>ImageNet Pretraining:</strong> The ResNet model is pretrained on the ImageNet dataset, which consists of millions of labeled images across various categories. This pretraining allows the model to learn general features that are useful across many vision tasks, including age prediction. After pretraining, the model is fine-tuned on a specialized age-labeled dataset to adapt it to the specific task of age estimation.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Voice-Based Age Prediction:</strong>
+                    <ul>
+                        <li><strong>Audio Model Architecture:</strong> The audio-based age prediction model may use a CNN, Recurrent Neural Network (RNN), or a combination (e.g., CRNN) to analyze the extracted MFCC features or spectrogram. The model processes temporal features of the audio signal to capture the nuances in speech patterns that vary with age.</li>
+                        <li><strong>CNN Layers:</strong> Convolutional layers are used to process the spectrogram and capture local features in the frequency domain.</li>
+                        <li><strong>RNN Layers:</strong> Recurrent layers, such as LSTM or GRU, are used to capture temporal dependencies in the speech signal, which are crucial for age estimation.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Prediction and Inference:</strong>
+                    <ul>
+                        <li><strong>Multimodal Fusion:</strong> If both image and voice inputs are provided, the system combines the predictions from both models using a fusion strategy, such as averaging the predicted ages or using a weighted sum based on model confidence. This multimodal approach can improve accuracy by leveraging complementary information from both sources.</li>
+                        <li><strong>Final Age Prediction:</strong> The combined or individual model outputs are then used to generate the final predicted age, which is displayed to the user.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Deployment and Real-Time Inference:</strong>
+                    <ul>
+                        <li><strong>Model Deployment:</strong> The trained models are deployed on an AWS EC2 instance, using frameworks like TensorFlow or PyTorch for serving predictions. The deployment environment is optimized for performance, ensuring quick response times for real-time predictions.</li>
+                        <li><strong>Web Interface:</strong> The front-end of the system is developed using HTML, CSS, and JavaScript, providing an intuitive interface where users can upload their image and voice data. The back-end, powered by Flask or Django, handles the processing of inputs and serves the prediction results to the user.</li>
+                    </ul>
+                </li>
+            </ol>
+        </main>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <ul class="footer-links">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
                 <li><a href="{{ url_for('try_it') }}">Try It</a></li>
-                <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                <!-- <li><a href="{{ url_for('blog') }}">Blog</a></li> -->
                 <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                <li><a href="{{ url_for('how_it_works') }}">How It Works</a></li>
             </ul>
         </div>
     </footer>

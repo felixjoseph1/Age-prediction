@@ -36,8 +36,9 @@ nav {
 }
 
 .hero {
-    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-    color: black;
+    background: url('/static/images/homepage_bg.jpg') ; 
+    /* no-repeat center center/cover */
+    color: rgb(249, 247, 247);
     text-align: center;
     padding: 100px 20px;
 }

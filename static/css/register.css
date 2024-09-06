@@ -7,12 +7,24 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+    background: url('/static/images/homepage_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
 }
 
 /* Container Styles */
@@ -24,6 +36,8 @@ body {
     text-align: center;
     max-width: 400px;
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 /* Heading Styles */
